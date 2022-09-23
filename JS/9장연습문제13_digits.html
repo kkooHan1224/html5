@@ -1,0 +1,10 @@
+<script>
+
+var input = prompt("입력해주세요", "입력" )
+
+alert("천의 자리 : " + Math.floor(parseInt(input)/1000))
+alert("백의 자리 : " + Math.floor(parseInt(input)%1000/100))
+alert("십의 자리 : " + Math.floor(parseInt(input)%1000%100/10))
+alert("일의 자리 : " + Math.floor(parseInt(input)%1000%100%10))
+
+</script>
