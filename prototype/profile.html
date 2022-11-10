@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>프로필</title>
+    <style>
+        #container {
+            width: 320px;
+            height: 100%; /* 높이 꽉차게라고 하시는데 뭔말인지 모르겠다. */
+            border: 1px solid rgb(238, 238, 238);
+            margin: 0 auto;    /* 정석은 top right bottom left. top right 만 적은 상황인데 left에 right 값이 동시에 적용된다. 그래서 가운데 정렬이 된다.  */
+            /* display: block; */
+            /* display: grid; */
+            /* display: flex; */
+        }
+        #profile {
+            height: 100px;
+        }
+
+        /* #profile > div  */
+        .left {
+            width: 80px;
+            float: left;
+            padding: 20px 0 0 0px;
+            font-size: 0.8em;
+        }
+        .textbox {
+            /* padding: */
+            margin-top: 10px;
+            /* margin-left: px; */
+        }
+        .label {
+            display: block;
+            padding: 8px 0 0 0;
+        
+        }
+        #gallery {
+            /* width: */
+            display: grid;
+            place-items:center;
+            gap: 10px; /* -> gallery 안에 있는 grid 자식 요소간의 간격 */
+            grid-template-columns: 1fr 1fr 1fr; /* fr: fragment? frame? */
+            /* grid-template-columns: 250px 250px 250px; => 바로 위 fr과 px 중 더 편한걸로 정하면 된다. */
+            padding: 10px; /* -> gallery 안에 있는 grid 부모와 자식 간의 간격 */
+            /* text-align: center; */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="profile">
+            <div class="left">
+            <img src="http://place-hold.it/58x58"style="margin: 0 0 0 8px; border-radius: 100%;"/>
+            </div>
+            <div class="left textbox"><div>1,962</div><span class="label">게시물</span></div>
+            <div class="left textbox"><div>2.5만</div><span class="label">팔로워</span></div>
+            <div class="left textbox"><div>5,559</div><span class="label">팔로잉</span></div>
+        </div>
+        <div id="gallery">
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+            <img src="http://place-hold.it/88x88" style="border-radius: 8px;"/>
+        </div>
+</body>
+</html>

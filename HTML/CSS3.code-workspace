@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../CSS3"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../JS"
+		},
+		{
+			"path": "C:/Bitnami/wampstack-7.4.30-1/apache2/htdocs/php-mysql"
+		}
+	],
+	"settings": {}
+}
