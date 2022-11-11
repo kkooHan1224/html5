@@ -1,0 +1,58 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
+
+#login {width: 500px; margin: 0 auto; border: 1px solid rgb(238, 238, 238);}
+#login h1 img {width:200px;}
+#login h1 {text-align: center;}
+#login h1 {margin-top: 30px;}
+/*  padding: 0 5px 0 5px; -> 양 옆에 여백을 주고 싶은데 잘 안되네 */
+#login h1:nth-child(2) {margin-top:20px; margin-bottom: 20px; font-size:1.2rem; font-weight:800;}
+
+
+#login #login_frm fieldset ul {margin-bottom:30px;}
+#login #login_frm fieldset ul li input {
+    display:block;
+    margin: 0 auto;
+    border:1px solid #aaa; width:50%;
+    padding: 10px 10px;
+    border-radius:5px; margin-bottom:8px;
+}
+
+#login #login_frm fieldset ul #login_btn {
+    background-color:#b1b1b3; color:#fff;
+    padding: 13px 28px; border-radius:5px;
+    display:block;
+    margin: 0 auto;
+}
+
+#login #login_frm fieldset div {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
+}
+
+#login #login_frm fieldset div [id="reg_btn"] {
+    background-color:#b1b1b3; color:#fff;
+    border-radius:5px;
+    width: 100px;
+    height: 25px;
+    margin-right: 3px;
+}
+
+#login #login_frm fieldset div [id="find_ID/PW"] {
+    background-color:#b1b1b3; color:#fff;
+    border-radius:5px;
+    width: 200px;
+    height: 25px;
+}
+
+#login footer h1 {
+    margin-top:80px; margin-bottom: 20px; font-size:1.2rem; font-weight:800;
+}
+
+#login footer div {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 20px;
+}
