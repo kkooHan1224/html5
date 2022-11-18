@@ -1,14 +1,20 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Open condition_getDate.html",
-            "url": "http://localhost:3000/${relativeFile}"
-        }
+      {
+        "name": "Launch",
+        "request": "launch",
+        "runtimeArgs": ["${workspaceFolder}/.vscode/launch.sh"],
+        "runtimeExecutable": "bash",
+        "cwd": "${fileDirname}",
+        "env": {
+          "fileExtname": "${fileExtname}",
+          "file": "${file}",
+          "url": "http://127.0.0.1:3000/${relativeFile}"
+        },
+        "outputCapture": "std",
+        "skipFiles": ["<node_internals>/**"],
+        "type": "node"
+      }
     ]
-}
+  }

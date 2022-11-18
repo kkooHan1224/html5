@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      function isLeapYear(year) {
+        if (year % 400 == 0) {
+          return true;  // year가 400으로 나누어 떨어지면 윤년
+        }
+        // year가 400의 배수가 아니다
+        if (year % 100 === 0) {
+          return false; // year가 100으로 나누어 떨어지면 평년
+        }
+        return (year % 4 === 0) ? true : false;
+      }
+      function printIsLeapYear(year) {
+        console.log(`${year}년은 윤년일까? === ${isLeapYear(year)}`)  
+      }
+
+      printIsLeapYear(2020);
+      printIsLeapYear(2010);
+      printIsLeapYear(2000);
+      printIsLeapYear(1900);
+    </script>
+  </head>
+  <body></body>
+</html>
+ 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      function isLeapYear(year) {
+        if (year % 400 == 0) {
+          return true;  // 윤년
+        } else if (year % 4 == 0 && year % 100 !=0) {
+          return true;  // 윤년
+        } else return false;
+      }
+      function printIsLeapYear(year) {
+        console.log(`${year}년은 윤년일까? === ${isLeapYear(year)}`)  
+      }
+
+      printIsLeapYear(2020);
+      printIsLeapYear(2010);
+      printIsLeapYear(2000);
+      printIsLeapYear(1900);
+    </script>
+  </head>
+  <body></body>
+</html>
+ 
