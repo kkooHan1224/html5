@@ -1,0 +1,12 @@
+<script src="https://unpkg.com/lodash"></script>
+<script>
+    let n = 10;
+    let sum = 0;
+    let series = _.range(1, n + 1);
+    for (let i of series) {
+        if (i % 2 == 0) {
+            sum += i;   // 짝수만 더한다
+        }
+    }
+    document.write(sum);
+</script>

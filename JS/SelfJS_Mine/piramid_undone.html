@@ -1,0 +1,33 @@
+<script>
+    function piramid(n) {
+        var input = [];
+        var answer = '';
+        for (i=0; i<n; i++) {
+            input.push('*');
+            answer += input[i];
+        }
+        return answer;
+    }
+    // 여기서 추가해야하는 기능 : 
+    //  upgrade_pira(1) 했을 때 piramid(1)
+    //  upgrade_pira(1) 했을 때 piramid(1) +'\n' piramid(2)
+    //  upgrade_pira(3) 했을 때 piramid(1) +'\n' piramid(2) +'\n' piramid(2)
+
+    function upgradepira(n) {
+        var answer2 = '';
+        if (n=1) {
+            return piramid(1);
+        } else {
+            for (i=1; i<n+1; i++) { // 이 부분도 틀린건가?
+            answer2 += piramid(i); // 이 부분이 틀린건가?
+            answer2 += '\n'
+            // n = 2 -> answer2 = 
+            }
+            return answer2;
+        }
+    
+    }
+
+    document.write(upgradepira());
+</script>
+

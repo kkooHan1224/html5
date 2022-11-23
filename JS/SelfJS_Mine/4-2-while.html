@@ -1,0 +1,19 @@
+<script>
+    const array = ['사과', '배', '바나나', '사과', '배', '바나나'];
+    // try2.
+    // while(true) {
+    //     var index = array.indexOf('바나나');    // 첫 번째 바나나의 인덱스 : 2
+    //     if (index === -1) {
+    //         break;
+    //     }
+    //     array.splice(index, 1); // 2번째 인덱스에 있는 1개의 요소를 제거
+    // }
+
+    // try1. do while문으로 하려했는데 안돼서 console.log로 결과를 출력해보고 try2.로 수정
+    do {
+        var index = array.indexOf('바나나');    // 첫 번째 바나나의 인덱스 : 2
+        array.splice(index, 1); // 2번째 인덱스에 있는 1개의 요소를 제거
+        index = array.indexOf('바나나');
+    } while (index !== -1);
+    document.write(array);
+</script>
