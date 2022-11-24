@@ -1,0 +1,15 @@
+<script>
+    function series(a, b) {
+        const output = [];
+        for (let i = a; i <= b; i++) {
+            output.push(i);
+        }
+        return output;
+    }
+    function sumAll(a, b) {
+        return series(a, b).reduce((prev, cur) => prev + cur);
+    }
+
+    console.log(`1부터 100까지의 합: ${sumAll(1, 100)}`)
+    console.log(`1부터 500까지의 합: ${sumAll(1, 500)}`)
+</script>
