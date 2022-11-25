@@ -1,0 +1,10 @@
+<script>
+    function min(first, ...rests) {
+        if (Array.isArray(first)) {
+            return Math.min(...first);  // 첫 번째 매개변수를 전개
+        }
+        return Math.min(first, ...rests);   // 나머지 매개변수를 전개
+    }
+
+    // 배열이 입력되거나 숫자들이 입력될때 모두 가능.
+</script>
