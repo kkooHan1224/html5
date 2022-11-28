@@ -1,0 +1,13 @@
+<!-- forEach 수정 -->
+<script>
+    const numbers = [273, 52, 103, 32, 57]
+  
+    numbers
+    .sort((a, b) => a - b)
+    .forEach(function (value, index, array) {
+      if (index > 0) {
+        console.log(`${value}는 ${array[index-1]}보다 크다.`)
+      }
+    })
+  </script>
+  
