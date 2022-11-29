@@ -1,0 +1,20 @@
+<script>
+    const test = {
+        a() {   // 메소드로 선언
+            console.log(this);
+        },
+        b: () => {  // 화살표 함수로 선언
+            var local = 'Joe';
+            console.log(this);
+        },
+    };
+    console.log(window.local);
+    console.log(test.a.name);
+    // 메소드를 호출합니다.
+    test.a();   // test 출력
+    test.b();   // window 출력
+    var a = test.a;
+    a();    // window 출력
+    a = test.a.bind(test);  // 함수에 this를 지정해준다.
+    a();    // test 출력
+</script>>
