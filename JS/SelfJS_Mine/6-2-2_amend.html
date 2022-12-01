@@ -1,0 +1,21 @@
+<script>
+// contain() 메소드를 추가합니다.
+String.prototype.contain = function (data) {
+  // return this.indexOf(data) >= 0;
+  // 이중 for문으로 해보겠다. (코딩을 할 때는 이중 for문이 아닌 메소드를 활용하라.)
+  // this 문자열에 data 문자열이 포함되어있는지 확인. 포함되어있으면 index 표시, 없으면 -1.
+
+  OUTER:  // 라벨을 써서 continue를 만났을 때 외부 반복문으로 오도록 했다.
+  for(let i = 0; i < this.length; i++) {
+    for(let j = 0; j < data.length; j++) {
+      if(this[i + j] !== data[j]) {
+        continue OUTER;
+      }  // 지린다.. 어떻게 i + j를 생각했을까. 배열이 아니라 문자끼리 일치하는지 비교하는 것이다.
+    }
+    return i; // data와 전부 다 일치할 때
+  }
+  return -1; // 문자열을 못 찾았을 때
+};
+
+console.log('안녕 in 안녕하세요: ', a.indexOf2('안녕'));
+</script>

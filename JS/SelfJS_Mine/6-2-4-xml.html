@@ -1,0 +1,20 @@
+<script>
+    const xml = `
+    <books>
+        <book>
+            <name>혼자 공부하는 파이썬</name>
+            <price>18000</price>
+            <publisher>한빛미디어</publisher>
+        </book>
+        <book>
+            <name>웹 프로그래밍 입문</name>
+            <price>26000</price>
+            <publisher>한빛아카데미</pyblisher>
+        </book>
+    </books>`;
+
+    // XML 문자열을 자바스크립트 DOM객체로 반환합니다.
+    const parser = new DOMParser();
+    const dom = parser.parseFromString(xml, 'text/xml');
+    console.log(dom.documentElement);
+</script>
