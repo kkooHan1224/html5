@@ -1,0 +1,16 @@
+<!-- selfjs/07/7-1-7.html -->
+<script src="https://unpkg.com/lodash"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const divs = document.querySelectorAll("body > div");
+    divs.forEach((div) => {
+      let rgb = [_.random(0, 88), _.random(0, 88), _.random(0, 88), _.random(0, 88)]
+      rgb = rgb.join();
+            div.style.height = `10px`;
+      div.style.backgroundColor = `rgb(${rgb})`;
+    });
+  });
+</script>
+<body>
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+</body>

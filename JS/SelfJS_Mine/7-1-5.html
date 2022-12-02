@@ -1,0 +1,16 @@
+<!-- selfjs/07/7-1-5.html -->
+<script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const a = document.querySelector('#a');
+        const b = document.querySelector('#b');
+        // 대입된 문자열을 그대로 넣습니다.
+        a.textContent = '<h1>textContent 속성</h1>';
+        // 대입된 문자열을 HTML 형식으로 넣습니다.
+        b.innerHTML = '<h1>&lt;a&gt;&amp;</h1>';
+      });
+    </script>
+    <body>
+      <div id="a"></div>
+      <div id="b"></div>
+    </body>
+    
