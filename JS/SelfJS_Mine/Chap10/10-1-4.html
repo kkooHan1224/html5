@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    class App extends React.Component {
+        render() {
+            return <div>
+                <h1>{this.props.name} 님 안녕하세요! </h1>
+                <img src={this.props.imgUrl} />
+            </div>
+        }
+    }
+
+    // 출력하기
+    const container = document.getElementById('root')
+    ReactDOM.createRoot(container).render(<App name="구름" imgUrl="http://placedog.net/300/200" />)
+</script>

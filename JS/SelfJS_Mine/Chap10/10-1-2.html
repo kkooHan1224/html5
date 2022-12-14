@@ -1,0 +1,19 @@
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    // 상수 선언하기
+    const name = '구름'
+    const imgUrl = 'http://placedog.net/300/200'
+
+    // 컴포넌트와 컨테이너 생성하기
+    const component = <div>
+        <h1>{name} 님 안녕하세요!</h1>
+        <img src={imgUrl} />
+    </div>
+    const container = document.getElementById('root')
+
+    // 출력하기
+    ReactDOM.render(component, container)
+</script>
