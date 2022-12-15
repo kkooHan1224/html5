@@ -10,8 +10,6 @@
             this.state = {
                 count: 0
             }
-
-            this.countUp = this.countUp.bind(this)
         }
 
         render () {
@@ -21,7 +19,7 @@
             </div>
         }
 
-        countUp (event) {
+        countUp = (event) => {
             this.setState({
                 count: this.state.count + 1
             })

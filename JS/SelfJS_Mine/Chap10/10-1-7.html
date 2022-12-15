@@ -10,14 +10,12 @@
             this.state = {
                 count: 0
             }
-
-            this.countUp = this.countUp.bind(this)
         }
 
         render () {
             return <div>
                 <h1>클릭한 횟수: {this.state.count}</h1>
-                <button onClick={this.countUp}>클릭</button>
+                <button onClick={(e) => this.countUp(e)}>클릭</button>
             </div>
         }
 

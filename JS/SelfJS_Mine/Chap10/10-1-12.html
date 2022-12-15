@@ -8,23 +8,18 @@
         constructor (props) {
             super(props)
             this.state = {
-                count: 0
+                fruits: ['사과', '바나나', '배', '귤']
             }
-
-            this.countUp = this.countUp.bind(this)
         }
 
         render () {
-            return <div>
-                <h1>클릭한 횟수: {this.state.count}</h1>
-                <button onClick={this.countUp}>클릭</button>
-            </div>
-        }
-
-        countUp (event) {
-            this.setState({
-                count: this.state.count + 1
+            // 항목을 생성합니다.
+            const list = this.state.fruits.map((item) => {
+                return <li>{item}</li>
             })
+            
+            // 출력합니다.
+            return <ul>{list}</ul>
         }
     }
 

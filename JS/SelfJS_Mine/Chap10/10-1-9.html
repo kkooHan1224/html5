@@ -8,22 +8,24 @@
         constructor (props) {
             super(props)
             this.state = {
-                count: 0
+                text: ''
             }
-
-            this.countUp = this.countUp.bind(this)
+            this.handleChange = this.handleChange.bind(this)
         }
+    
 
         render () {
             return <div>
-                <h1>클릭한 횟수: {this.state.count}</h1>
-                <button onClick={this.countUp}>클릭</button>
+                <input
+                    value={this.state.text}
+                    onChange={this.handleChange} />
+                <h1>{this.state.text}</h1>
             </div>
         }
 
-        countUp (event) {
+        handleChange (event) {
             this.setState({
-                count: this.state.count + 1
+                text: event.target.value
             })
         }
     }

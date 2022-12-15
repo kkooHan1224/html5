@@ -8,22 +8,27 @@
         constructor (props) {
             super(props)
             this.state = {
-                count: 0
+                checked: false
             }
-
-            this.countUp = this.countUp.bind(this)
+            this.handleClick = this.handleClick.bind(this)
         }
 
-        render () {
+        render() {
+            const textStyle = {
+                color: this.state.checked ? 'blue' : 'red'
+            }
+
             return <div>
-                <h1>클릭한 횟수: {this.state.count}</h1>
-                <button onClick={this.countUp}>클릭</button>
+                <input
+                    type="checkbox"
+                    onClick={this.handleClick} />
+                <h1 style={textStyle}>글자</h1>
             </div>
         }
 
-        countUp (event) {
+        handleClick (event) {
             this.setState({
-                count: this.state.count + 1
+                checked: event.target.checked
             })
         }
     }
