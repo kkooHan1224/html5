@@ -6,14 +6,21 @@
     // 애플리케이션 클래스 생성하기
     class App extends React.Component {
         render() {
-            const list = [
-                <li>사과</li>,
-                <li>바나나</li>,
-                <li>배</li>,
-                <li>귤</li>,
-            ]
-            
-            return <ul>{list}</ul>
+            return <ul>
+                <Item value="Item 컴포넌트 1번" />
+                <Item value="Item 컴포넌트 2번" />
+                <Item value="Item 컴포넌트 3번" />
+            </ul>
+        }
+    }
+
+    class Item extends React.Component {
+        constructor(props) {
+            super(props)
+        }
+
+        render() {
+            return <li>{this.props.value}</li>
         }
     }
 
