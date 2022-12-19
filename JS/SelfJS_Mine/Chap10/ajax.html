@@ -1,0 +1,22 @@
+<script>
+    let xhr = new HMLHttpRequest();
+    xhr.onreadystatechange = (event) => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) {
+            return;
+        }
+        let text = xhr.responseText;
+        if (![200, 201].icludes(xhr.status)) {
+            // status 코드가 200 또는 201이 아니면
+            console.log(xhr.status || 'error');
+            return;
+        }
+        document.write(text);   // string
+        let data = JSON.parse(text);
+        console.log(data);  // object
+    };
+    xhr.onerror = (event) => {
+        console.error(event.type);
+    };
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+    xhr.send();
+</script>
