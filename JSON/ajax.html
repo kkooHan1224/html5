@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>서울 미세먼지 API</title>
+  </head>
+  <body>
+    <div>
+      <h2>1. 서울시 OpenAPI(실시간 미세먼지 상태)를 이용하기</h2>
+      <p>모든 구의 미세먼지를 표기해주세요</p>
+      <p>업데이트 버튼을 누를 때마다 내용이 지워진 후 새로 써져야 합니다.</p>
+      <button id="updateButton">업데이트</button>
+      <hr />
+      <div id="data"></div>
+    </div>
+    <script>
+      // 참고할만한 코드 : https://velog.io/@yongchan_0312/API-%EB%AA%A8%EC%95%84%EB%AA%A8%EC%95%84-ajax
+      // openAPI 코드 : http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99
+      const url =
+        "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99";
+      document.querySelector("#updateButton").onclick = () => {
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            const row = data.RealtimeCityAir.row;
+            let ul = document.querySelector("#data");
+            // TODO: row 배열을 li로 변환해서 출력하기
+            row
+              .map((city) => `<li>${city.MSRSTE_NM}: ${city.PM25}</li>`)
+              .forEach((item) => ul.insertAdjacentHTML("beforeend", item));
+          });
+      };
+    </script>
+  </body>
+</html>
