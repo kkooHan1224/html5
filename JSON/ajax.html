@@ -1,36 +1,68 @@
+<!-- 
+  참고할만한 코드 : https://velog.io/@yongchan_0312/API-%EB%AA%A8%EC%95%84%EB%AA%A8%EC%95%84-ajax
+  openAPI 링크 : http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99
+--> 
+
 <!DOCTYPE html>
 <html lang="ko">
+
   <head>
     <meta charset="UTF-8" />
     <title>서울 미세먼지 API</title>
+    <style>
+      th {background-color: rgb(240, 239, 239);}
+    </style>
   </head>
+
   <body>
-    <div>
+      <br />
       <h2>1. 서울시 OpenAPI(실시간 미세먼지 상태)를 이용하기</h2>
+      <hr />
+      <br />
       <p>모든 구의 미세먼지를 표기해주세요</p>
       <p>업데이트 버튼을 누를 때마다 내용이 지워진 후 새로 써져야 합니다.</p>
-      <button id="updateButton">업데이트</button>
+      <div id="update">
+        <button id="updateButton">업데이트</button><b id="updateTime"></b>
+      </div>
+      <br />
       <hr />
-      <div id="data"></div>
+      <br />  
+      <table id="data" border="1px" style="text-align: center;">  <!-- 폰트에 관한 내용은 보통 상속이 된다 -->
+        <tr>
+          <th style="width: 5rem">지역</th> <!-- 표의 너비를 설정해서, 데이터가 들어오더라도 화면이 바뀌지 않는다 -->
+          <th style="width: 8rem">미세먼지 농도</th>
+          <th style="width: 8rem">초미세먼지 농도</th>
+        </tr>
+      </table>
     </div>
+
     <script>
-      // 참고할만한 코드 : https://velog.io/@yongchan_0312/API-%EB%AA%A8%EC%95%84%EB%AA%A8%EC%95%84-ajax
-      // openAPI 코드 : http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99
+      const table = document.querySelector("#data");
+      const header = table.querySelector('tr');   // 헤더를 미리 저장 (*선생님이 알려주심*)
       const url =
         "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99";
+      
       document.querySelector("#updateButton").onclick = () => {
+        /* 업데이트 시간을 나타내주기 위해서 개인적으로 추가해준 코드 */
+        let updateDateTime = new Date();
+        let updateTime = document.querySelector("#updateTime");
+        updateTime.innerHTML = '';
+        updateTime.insertAdjacentHTML("beforeend", ` (업데이트 시간 : ${updateDateTime.toLocaleString()})`)
+
         fetch(url)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
-            const row = data.RealtimeCityAir.row;
-            let ul = document.querySelector("#data");
-            // TODO: row 배열을 li로 변환해서 출력하기
-            row
-              .map((city) => `<li>${city.MSRSTE_NM}: ${city.PM25}</li>`)
-              .forEach((item) => ul.insertAdjacentHTML("beforeend", item));
+            table.innerHTML = '';
+            table.appendChild(header);  // 내용을 지우고 헤더만 다시 추가 (*선생님이 알려주심*)
+            data.RealtimeCityAir.row
+              .map(
+                (city) =>
+                  `<tr><td>${city.MSRSTE_NM}</td>  <td>${city.PM10}</td>  <td>${city.PM25}</td></tr>`
+              )
+              .forEach((item) => table.insertAdjacentHTML("beforeend", item));
           });
       };
     </script>
+
   </body>
 </html>

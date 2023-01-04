@@ -1,0 +1,42 @@
+<body>
+  <form id="msgSend" method="post">
+    message : <input type="text" name="msg" />
+    <input type="submit" value="전송" />
+  </form>
+  <div id="result"></div>
+</body>
+
+<script>
+  const result = document.querySelector("result");
+  document.querySelector("msgSend").onclick = () => {
+    let json = JSON.stringify({
+      datetime: new Date(), // 속성이름을 지정한다.
+      message: getParameter("msg"),
+    });
+
+    fetch("https://httpbin.org/post", {
+      // 테스트 주소. 요청이 들어오면 어떤 요청이 들어오는지 그대로 보여준다.
+      // HTTP 요청에 대한 옵션
+      body: json,
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+    })
+      .then((res) => {
+        return res.ok ? res.text() : Promise.reject(res.status);
+        // res가 성공일 때는 텍스트를 리턴하고,
+        // 실패일 때는 오류 상태를 포함한 프로미스로 리턴.
+      })
+      .then((text) => {
+        document.write(`<pre>${text}</pre>`);
+        // response를 text로 바꿔주고 출력하는 코드
+        // <pre> 태그를 사용하면 띄어쓰기가 적용되어 출력된다.
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    const result = JSON.parse(json);
+
+    result.insertAdjacentHTML("beforeend", result);
+  };
+</script>
